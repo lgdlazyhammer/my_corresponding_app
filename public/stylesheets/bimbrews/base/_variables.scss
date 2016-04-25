@@ -1,0 +1,123 @@
+// Typography
+$sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: $georgia;
+$base-font-family: $sans-serif;
+$header-font-family: $base-font-family;
+
+// Sizes
+$base-font-size: 1em;
+$common-font-size-px: 14;
+$common-font-size: em($common-font-size-px);
+$base-margin: em(10);
+$button-font-size: em(12);
+$base-line-height: $base-font-size * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-line-height: $base-font-size * 1.25;
+$base-border-radius: 3px;
+$main-header-height: 68;
+
+// Colors
+$white: #fff;
+$black: #000;
+$blue: #4675a8;
+$blue-light: #e0eaf3;
+$blue-pivot: #5286bd;
+$blue-info: #73a9e8;
+$orange-dark: #e2580b;
+$orange-light: #f2930c;
+
+$gray-1: #f3f3f3;
+$gray-2: #ececec;
+$gray-3: #e4e4e4;
+$gray-4: #ccc;
+$gray-5: #999;
+$gray-6: #666;
+$gray-7: #333;
+
+// Secondary Colors
+$fuschia: #c84173;
+$green: #77bd0b;
+$purple: #8f58ab;
+$red: #cc060c;
+$teal: #4da599;
+$yellow: #fab11c;
+
+// Bitters Colors
+$light-red: #fbe3e4;
+$danger: #e74c3c;
+$danger-hover: darken($danger, 15);
+
+// Background Color
+$base-background-color: $white;
+
+// Font Colors
+$base-font-color: $gray-7;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: lighten($base-accent-color, 5);
+$active-button-color: darken($base-button-color, 10);
+$active-button-secondary-color: darken($white, 4);
+
+// Border color
+$base-border-color: darken($gray-2, 15);
+
+// Flash Colors
+$alert-color: $yellow;
+$error-color: $red;
+$notice-color: $blue;
+$success-color: $green;
+
+// Modals
+$modal-background-color: $gray-1;
+$modal-area-border-color: $gray-2;
+
+$modal-padding: $base-margin * 1.5;
+$modal-close-dimensions: 1em;
+
+// Tree Picker
+$column-chooser-hover-color: rgba(0, 0, 0, 0.08);
+
+// Forms
+$form-item-background: #fff;
+$form-item-padding: ($base-line-height / 3) ($base-line-height / 3);
+$form-item-margin-bottom: $base-line-height / 2;
+$form-border-style: solid;
+$form-border-width: 1px;
+$form-border-color: darken($base-border-color, 10);
+$form-border-color-hover: darken($base-border-color, 15);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$box-shadow-color: rgba(0, 0, 0, 0.06);
+$form-box-shadow: inset 0 1px 3px $box-shadow-color;
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $common-font-size;
+$form-font-family: $base-font-family;
+$form-checkbox-size: em(14, $common-font-size-px);
+$form-checkbox-content-size-px: 12;
+
+// Refills Variables
+
+// Navigation
+$header-padding: 15px;
+$header-background-color: $gray-1;
+$header-height: 60px;
+$header-inner-height: $header-height - $header-padding * 2;
+$header-logo-height: 16px;
+$header-icon-height: 20px;
+$header-box-shadow-color: rgba(0, 0, 0, 0.2);
+$header-box-shadow: 0 1px 4px $header-box-shadow-color;
+
+// Breadcrumbs
+$breadcrumb-arrow-color: $gray-4;
+$breadcrumb-font-size: $common-font-size;
+$breadcrumb-height: em($base-font-size, $breadcrumb-font-size);
+$breadcrumb-arrow-icon: '\e600';
+
+// Footer
+$footer-height: 40px;
+$footer-padding: 8px;
+$footer-font-size: 12px;

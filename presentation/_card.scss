@@ -1,0 +1,74 @@
+.presentation-list {
+  @include clearfix();
+  display: block;
+  text-align: center;
+}
+
+.presentation-list--wide {
+  .presentation-card {
+    width: 15em;
+  }
+}
+
+.presentation-card {
+  background: $gray-1;
+  border: 1px solid $gray-1;
+  border-radius: 3px;
+  display: inline-block;
+  margin: $base-margin;
+  padding-top: em(100);
+  position: relative;
+  width: em(160);
+
+  p {
+    background: $white;
+    margin: 0;
+  }
+}
+
+.card__content {
+  line-height: 110px; // px because of different font sizes
+  margin: auto;
+  @include position(absolute, 0px 0px 0px 0px);
+}
+
+.card__code {
+  color: $gray-6;
+  font-family: $monospace;
+  font-size: em(14);
+  padding: em(16) em(8) em(2);
+}
+
+.card__description {
+  color: $gray-5;
+  font-size: em(13);
+  padding: 0 em(8) em(12);
+}
+
+$colors: (
+  blue: $blue,
+  blue-light: $blue-light,
+  blue-pivot: $blue-pivot,
+  blue-info: $blue-info,
+  orange-light: $orange-light,
+  orange-dark: $orange-dark,
+  gray-1: $gray-1,
+  gray-2: $gray-2,
+  gray-3: $gray-3,
+  gray-4: $gray-4,
+  gray-5: $gray-5,
+  gray-6: $gray-6,
+  gray-7: $gray-7,
+  green: $green,
+  purple: $purple,
+  fuschia: $fuschia,
+  yellow: $yellow,
+  teal: $teal,
+  red: $red
+);
+
+@each $name, $variable in $colors {
+  .color--#{$name} {
+    background: $variable;
+  }
+}

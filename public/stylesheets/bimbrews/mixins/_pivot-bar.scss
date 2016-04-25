@@ -1,0 +1,74 @@
+@mixin pivot-bar-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  > * {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+@mixin pivot-bar {
+  background: $gray-7;
+  position: relative;
+  width: $pivot-bar-width;
+  z-index: 1;
+}
+
+@mixin pivot-bar-link {
+  background: $gray-7;
+  border-style: solid;
+  border-width: $pivot-bar-item-border-width 0;
+  border-top-color: transparentize(#fff, .9);
+  border-bottom-color: transparentize(#000, .2);
+  display: block;
+  height: $pivot-bar-item-height;
+  position: relative;
+  width: $pivot-bar-width;
+  &:hover {
+    &, span {
+      background: $gray-2;
+    }
+    span {
+      @include transform(translate3d(100%, 0, 0));
+      @include transition(transform .2s, box-shadow .2s);
+      box-shadow: $header-box-shadow;
+      color: $gray-7;
+      overflow: visible;
+    }
+  }
+}
+
+@mixin pivot-bar-link-active {
+  &, &:hover {
+    &, span {
+      background: $blue-pivot;
+      color: $white;
+      cursor: default;
+    }
+  }
+}
+
+@mixin pivot-bar-label {
+  @include transition(none);
+  bottom: -1px;
+  display: block;
+  font-size: em(20);
+  line-height: $pivot-bar-item-height - ($pivot-bar-item-border-width * 2);
+  padding: 0 0.5em;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  white-space: nowrap;
+  z-index: -1;
+}
+
+@mixin pivot-bar-link-pseudo($icon, $dimensions) {
+  &:after {
+    content: '';
+    @extend %pivot-icon-#{$icon};
+    @include center-absolutely($dimensions);
+  }
+}

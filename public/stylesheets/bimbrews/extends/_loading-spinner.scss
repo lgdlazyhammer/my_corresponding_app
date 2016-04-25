@@ -1,0 +1,21 @@
+@import '../mixins/loading-spinner';
+
+%loading-spinner {
+  @include loading-spinner;
+}
+
+%loading-spinner-text {
+  @include loading-spinner-text;
+}
+
+%loading-spinner-large {
+  @include loading-spinner-large;
+}
+
+%loading-spinner-medium {
+  @include loading-spinner-medium;
+}
+
+%loading-spinner-small {
+  @include loading-spinner-small;
+}

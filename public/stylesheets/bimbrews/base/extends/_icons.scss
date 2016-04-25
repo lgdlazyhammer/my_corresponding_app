@@ -1,0 +1,33 @@
+%icon {
+  @include icon-base;
+}
+
+$icon-types: '' header pivot pivot-active activity-type activity-type-hover activity-type-white project milestones;
+
+@each $icon-type in $icon-types {
+  $prefix: '';
+  @if $icon-type != '' {
+    $prefix: '#{$icon-type}-';
+  }
+  @each $icon in list-svgs($icon-type) {
+    $dimensions: get_svg_dimensions($icon, $icon-type);
+      %#{$prefix}svg-block-#{$icon} {
+        @include svg-block($icon, $icon-type);
+      }
+      %#{$prefix}icon-#{$icon} {
+        @extend %icon;
+        @extend %#{$prefix}svg-block-#{$icon};
+      }
+      %#{$prefix}icon-#{$icon}-sized {
+        @extend %#{$prefix}icon-#{$icon};
+        //height: unquote(nth($dimensions, 2) + 'px');
+        //width: unquote(nth($dimensions, 1) + 'px');
+      }
+  }
+}
+
+%icon-close {
+  &:hover {
+    @include svg-block(close-hover);
+  }
+}

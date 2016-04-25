@@ -1,0 +1,7 @@
+%bim-button {
+  @include bim-button($base-button-color, $base-button-color, $white, $hover-button-color, $hover-button-color, $white, $base-button-color, $active-button-color, $white, $base-button-color, $base-button-color, $white);
+}
+
+%bim-button-secondary {
+  @include bim-button($white, $gray-3, $base-button-color, $white, $gray-4, $hover-link-color, $active-button-secondary-color, $gray-4, $hover-link-color, $white, $gray-3, $base-button-color);
+}

@@ -1,0 +1,34 @@
+@import 'extends/footer';
+
+.footer {
+  @extend %footer;
+
+  &__logo {
+    @extend %footer-logo;
+  }
+
+  &__links {
+    @extend %footer-links;
+  }
+
+  &__social {
+    @extend %footer-social;
+  }
+
+  &__social-link {
+    @extend %footer-social-link;
+    &--facebook {
+      @extend %footer-social-link-facebook;
+    }
+    &--twitter {
+      @extend %footer-social-link-twitter;
+    }
+    &--youtube {
+      @extend %footer-social-link-youtube;
+    }
+  }
+
+  &__legal {
+    @extend %footer-legal;
+  }
+}

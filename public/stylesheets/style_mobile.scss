@@ -1,0 +1,19 @@
+@import 'bourbon';
+@import 'neat';
+@import 'bimbrews/base/base';
+
+.body{
+    @include fill-parent();
+    @include row(table);
+}
+
+.content {
+    @include span-columns(12);
+    @include background(linear-gradient(red, green) left repeat, radial-gradient(yellow, orange));
+ }
+
+
+.footer {
+    @include span-columns(12);
+    @include background(linear-gradient(red, green) left repeat, radial-gradient(red, orange));
+ }

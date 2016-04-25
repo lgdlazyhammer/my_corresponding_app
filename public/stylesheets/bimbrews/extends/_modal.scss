@@ -1,0 +1,45 @@
+@import '../mixins/modal';
+
+%modal-hide {
+  @include modal-hide;
+}
+
+%modal-overlay {
+  @include modal-overlay;
+}
+
+%modal-dialog {
+  @include modal-dialog;
+}
+
+%modal-dialog-shown {
+  @include modal-dialog-shown;
+}
+
+%modal-actions {
+  @include modal-actions;
+}
+
+%modal-head {
+  @include modal-head;
+}
+
+%modal-header {
+  @include modal-header;
+}
+
+%modal-main {
+  @include modal-main;
+}
+
+%modal-footer {
+  @include modal-footer;
+}
+
+%modal-actions {
+  @include modal-actions;
+}
+
+%modal-close {
+  @include modal-close;
+}

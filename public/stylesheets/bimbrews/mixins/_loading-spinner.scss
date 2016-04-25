@@ -1,0 +1,51 @@
+@include keyframes(loading-spinner-spin) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@mixin loading-spinner {
+  &:before {
+    @include animation(loading-spinner-spin 0.75s linear infinite running);
+    background: image-url("bimbrews/loading-spinner.png") no-repeat center;
+    background-size: 100%;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@mixin loading-spinner-text {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@mixin loading-spinner-text {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@mixin loading-spinner-large {
+  &:before {
+    @include size(44px);
+  }
+
+  font-size: 20px;
+}
+
+@mixin loading-spinner-medium {
+  &:before {
+    @include size(30px);
+  }
+
+  font-size: 20px;
+}
+
+@mixin loading-spinner-small {
+  &:before {
+    @include size(18px);
+  }
+}

@@ -1,0 +1,35 @@
+.triplets--big-center {
+  @include row();
+
+  .col {
+    @include span-columns(3.5);
+  }
+
+  .col:nth-child(2) {
+    @include span-columns(5);
+  }
+}
+
+.quads {
+  @include row();
+
+  &.centered {
+    margin: auto;
+    max-width: em(1024);
+    padding: em(48);
+  }
+
+  .col {
+    @include span-columns(3);
+  }
+}
+
+.col {
+  select {
+    width: 100%;
+  }
+}
+
+.col--inline-content-centered {
+  text-align: center;
+}

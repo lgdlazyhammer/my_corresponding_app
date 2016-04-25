@@ -1,0 +1,75 @@
+@import 'extends/navigation';
+
+.header {
+  @extend %header;
+  &--logotype-hidden {
+    .header__logotype {
+      @extend %header-logotype-hidden;
+    }
+  }
+
+  &__logo {
+    @extend %header-logo;
+  }
+
+  &__logotype {
+    @extend %header-logotype;
+  }
+
+  &__product-name {
+    @extend %header-product-name;
+  }
+
+  &__breadcrumbs {
+    @extend %header-breadcrumbs;
+  }
+
+  &__controls {
+    @extend %header-controls;
+  }
+
+  &__control-item {
+    @extend %header-control-item;
+  }
+
+  &__control {
+    @extend %header-control;
+    &--profile {
+      @extend %header-control-profile;
+      &-no-photo {
+        @extend %header-control-profile-no-photo;
+      }
+    }
+    &--icon {
+      @extend %header-control-icon;
+    }
+    &--unread {
+      @extend %header-control-unread;
+    }
+    &--unread-count {
+      @extend %header-control-unread-count;
+    }
+    &--messages {
+      @extend %header-control-messages;
+      &.header__control--unread {
+        @extend %header-control-messages-unread;
+      }
+    }
+    &--notifications {
+      @extend %header-control-notifications;
+      &.header__control--unread {
+        @extend %header-control-notifications-unread;
+      }
+    }
+    &--admin {
+      @extend %header-control-admin;
+    }
+    &--help {
+      @extend %header-control-help;
+    }
+  }
+
+  &__search[type='search'] {
+    @extend %header-search;
+  }
+}

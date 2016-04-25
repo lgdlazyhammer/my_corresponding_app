@@ -1,0 +1,47 @@
+@import 'extends/modal';
+
+.modal {
+  &--hide {
+    @extend %modal-hide;
+  }
+
+  &__overlay {
+    @extend %modal-overlay;
+  }
+
+  &__dialog {
+    @extend %modal-dialog;
+  }
+
+  &__dialog--shown {
+    @extend %modal-dialog-shown;
+  }
+
+  &__actions {
+    @extend %modal-actions;
+  }
+
+  &__head {
+    @extend %modal-head;
+  }
+
+  &__header {
+    @extend %modal-header;
+  }
+
+  &__main {
+    @extend %modal-main;
+  }
+
+  &__footer {
+    @extend %modal-footer;
+  }
+
+  &__actions {
+    @extend %modal-actions;
+  }
+
+  &__close {
+    @extend %modal-close;
+  }
+}

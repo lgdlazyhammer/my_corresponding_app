@@ -1,0 +1,15 @@
+// See mixins/tables and extends/tables to apply
+// some default rules to table-related elements, e.g.:
+// table { @extend %bim-table-with-descendants; }
+
+.table-header {
+  @extend %bim-table-header;
+}
+
+.sort-icons {
+  @extend %bim-sort-icons;
+}
+
+.sort {
+  @extend %bim-sort;
+}

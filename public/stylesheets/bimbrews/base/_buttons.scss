@@ -1,0 +1,15 @@
+button,
+input[type="submit"],
+.button {
+  @extend %bim-button;
+}
+
+.button--secondary {
+  @extend %bim-button-secondary;
+}
+
+.button .icon-plus-sign {
+  left: -4px;
+  position: relative;
+  top: 1px;
+}

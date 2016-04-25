@@ -1,0 +1,61 @@
+// A table can extend this to have all default table
+// styling applied to it.
+%bim-table-with-descendants {
+  @include bim-table;
+
+  th {
+    @include bim-th;
+  }
+
+  tbody {
+    @include bim-tbody;
+  }
+
+  thead {
+    @include bim-thead;
+  }
+
+  th, td {
+    @include bim-table-cells;
+  }
+  
+  tr, th, td {
+    @include bim-table-rows-and-cells;
+  }
+}
+
+%bim-table {
+  @include bim-table;
+}
+
+%bim-th {
+  @include bim-th;
+}
+
+%bim-tbody {
+  @include bim-tbody;
+}
+
+%bim-thead {
+  @include bim-thead;
+}
+
+%bim-table-cells {
+  @include bim-table-cells;
+}
+
+%bim-table-rows-and-cells {
+  @include bim-table-rows-and-cells;
+}
+
+%bim-table-header {
+  @include bim-table-header;
+}
+
+%bim-sort-icons {
+  @include bim-sort-icons;
+}
+
+%bim-sort {
+  @include bim-sort;
+}

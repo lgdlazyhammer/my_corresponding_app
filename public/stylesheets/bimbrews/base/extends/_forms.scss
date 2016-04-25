@@ -1,0 +1,99 @@
+%bim-fieldset {
+  @include bim-fieldset;
+}
+
+%bim-form-block {
+  @include bim-form-block;
+}
+
+%bim-label {
+  @include bim-label;
+}
+
+%bim-form-normalizer {
+  @include bim-form-normalizer;
+}
+
+%bim-textarea {
+  @include bim-textarea;
+}
+
+%bim-input-search {
+  @include bim-input-search;
+}
+
+%bim-input-box {
+  @include bim-input-box;
+}
+
+%bim-input-file {
+  @include bim-input-file;
+}
+
+%bim-select {
+  @include bim-select;
+}
+
+%bim-select-open {
+  @include bim-select-open;
+}
+
+%bim-inputbutton {
+  @include bim-inputbutton;
+}
+
+%bim-checkbox {
+  @extend %bim-inputbutton;
+}
+
+%bim-checkbox-checked {
+  @extend %bim-checkbox;
+  @include bim-checkbox-checked;
+}
+
+%bim-radio {
+  @extend %bim-inputbutton;
+  @include bim-radio;
+}
+
+%bim-radio-checked {
+  @extend %bim-radio;
+  @include bim-radio-checked;
+}
+
+%bim-inputbutton-input {
+  @include bim-inputbutton-input;
+}
+
+%bim-inputbutton-container {
+  @include bim-inputbutton-container;
+}
+
+%bim-checkbox-container {
+  @extend %bim-inputbutton-container;
+  @include bim-checkbox-container;
+  input[type=checkbox] {
+    @extend %bim-inputbutton-input;
+  }
+}
+
+%bim-radio-container {
+  @extend %bim-inputbutton-container;
+  @include bim-radio-container;
+  input[type=radio] {
+    @extend %bim-inputbutton-input;
+  }
+}
+
+// Error styles
+%bim-input-with-errors {
+ @include bim-input-with-errors;
+}
+
+%bim-field-with-errors {
+  @include bim-field-with-errors;
+}
+
+%bim-error-span {
+  @include bim-error-span;
+}

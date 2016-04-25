@@ -1,0 +1,21 @@
+@import '../mixins/pivot-bar';
+
+%pivot-bar-container {
+  @include pivot-bar-container;
+}
+
+%pivot-bar {
+  @include pivot-bar;
+}
+
+%pivot-bar-link {
+  @include pivot-bar-link;
+}
+
+%pivot-bar-link-active {
+  @include pivot-bar-link-active;
+}
+
+%pivot-bar-label {
+  @include pivot-bar-label;
+}

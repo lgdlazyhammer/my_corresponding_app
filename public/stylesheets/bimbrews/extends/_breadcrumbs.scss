@@ -1,0 +1,21 @@
+@import '../mixins/breadcrumbs';
+
+%bread {
+  @include clearfix;
+}
+
+%bread-crumb {
+  @include bread-crumb;
+}
+
+%first-crumb-icon {
+  @include first-crumb-icon;
+}
+
+%crumb {
+  @include crumb;
+}
+
+%crumb-icon {
+  @include crumb-icon;
+}

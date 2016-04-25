@@ -1,0 +1,47 @@
+$pivot-bar-width: 60px !default;
+$pivot-bar-item-border-width: 1px !default;
+$pivot-bar-item-height: 42px !default;
+@import 'extends/pivot-bar';
+
+.pivot-bar-container {
+  @extend %pivot-bar-container;
+}
+
+.pivot-bar {
+  @extend %pivot-bar;
+
+  &__item {
+    &--active {
+      a {
+        @extend %pivot-bar-link-active;
+      }
+    }
+
+    a {
+      @extend %pivot-bar-link;
+    }
+
+    span {
+      @extend %pivot-bar-label;
+    }
+
+    @each $icon in list-svgs(pivot) {
+      &--#{$icon} {
+        $dimensions: get_svg_dimensions($icon, pivot);
+        $dimensions-px: number(nth($dimensions, 1) + 'px') number(nth($dimensions, 2) + 'px');
+
+        a {
+          @include pivot-bar-link-pseudo($icon, $dimensions-px);
+        }
+
+        &:not(.pivot-bar__item--active) a {
+          &:hover {
+            &:after {
+              @extend %pivot-active-icon-#{$icon};
+            }
+          }
+        }
+      }
+    }
+  }
+}

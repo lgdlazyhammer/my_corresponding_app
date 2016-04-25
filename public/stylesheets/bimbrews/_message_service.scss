@@ -1,0 +1,118 @@
+$dialog_top: 2em;
+$dialog_padding: 1.3em;
+$dialog_margin: 50%;
+$dialog_font_size: $common-font-size;
+$dialog_radius: 3px;
+$dialog_width_big: 39em;
+$dialog_width_medium: 32em;
+$dialog_width_small: 25em;
+$dialog_background_color: $gray-1;
+$dialog_border_color: $gray-4;
+$dialog_image_width: 23px;
+$dialog_image_height: 23px;
+$dialog_close_image_width: 15px;
+$dialog_close_image_height: 15px;
+
+.iw_message_dialog_base {
+  position: absolute;
+  top: $dialog_top;
+  left: 0;
+  right: 0;
+  font-size: $dialog_font_size;
+  margin-left: $dialog_margin;
+  margin-right: $dialog_margin;
+}
+
+.iw_message_dialog_modal {
+  position: fixed;
+  /* Move back the modal DIV to the left. */
+  margin-left: -$dialog_margin;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 10000;
+}
+
+.iw_message_dialog_wrapper {
+  margin-bottom: 1em;
+}
+
+.iw_message_dialog {
+  position: relative;
+  margin: auto;
+  z-index: 10001;
+  background-color: $dialog_background_color;
+  border-radius: $dialog_radius;
+  border: 1px solid $dialog_border_color;
+  padding: $dialog_padding;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+
+  // We set a default width and margin which can then be overwritten.
+  // In rare cases angular crashes and does not apply the new style
+  // but we want to make sure the dialog has a width when it is shown.
+  width: $dialog_width_medium;
+  margin-left: -$dialog_width_medium/2 - $dialog_padding;
+
+  &.big {
+    width: $dialog_width_big;
+    margin-left: -$dialog_width_big/2 - $dialog_padding;
+  }
+
+  &.medium {
+    width: $dialog_width_medium;
+    margin-left: -$dialog_width_medium/2 - $dialog_padding;
+  }
+
+  &.small {
+    width: $dialog_width_small;
+    margin-left: -$dialog_width_small/2 - $dialog_padding;
+  }
+
+  &.fixed {
+    position: fixed;
+  }
+}
+
+.iw_message_dialog_header_close {
+  position: absolute;
+  width: $dialog_close_image_width;
+  height: $dialog_close_image_height;
+  cursor: pointer;
+  top: 1.47em;
+  right: $dialog_padding;
+}
+
+.iw_message_dialog_body_image {
+  float: left;
+  width: $dialog_image_width;
+  height: $dialog_image_height;
+  background-size: $dialog_image_width $dialog_image_height;
+  margin-top: -1px;
+}
+
+.iw_message_dialog_body {
+  margin: 0 2em 0 2.7em;
+
+  &.confirm {
+    /* Overwrite the default margin, because the confirm dialog has no header close button. */
+    margin: 0em 0 1em 2.7em;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.iw_message_dialog_footer {
+  margin-top: $dialog_padding;
+  text-align: right;
+}
+
+.iw_message_dialog_btn {
+  min-height: em(48);
+  min-width: 4.5em;
+  margin-bottom: 0;
+  margin-left: 0.4em;
+}

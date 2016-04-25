@@ -1,0 +1,52 @@
+// Remember to pull in flyout.js as well!
+@import 'extends/flyout';
+
+.flyout {
+  @extend %flyout;
+
+  &--no-max {
+    @extend %flyout-no-max;
+  }
+
+  &__container {
+    @extend %flyout-container;
+
+    &--shown {
+      @extend %flyout-container-shown;
+    }
+  }
+
+  &__centerer {
+    @extend %flyout-centerer;
+  }
+
+  &__trigger {
+    @extend %flyout-trigger;
+  }
+
+  &__section {
+    &:first-child {
+      .flyout__item:first-child {
+        @extend %flyout-very-first-item;
+      }
+    }
+
+    &:last-child {
+      .flyout__item:last-child {
+        @extend %flyout-very-last-item;
+      }
+    }
+  }
+
+  &__item {
+    @extend %flyout-item;
+
+    &:first-child {
+      @extend %flyout-first-item;
+    }
+
+    &:last-child {
+      @extend %flyout-last-item;
+    }
+  }
+}

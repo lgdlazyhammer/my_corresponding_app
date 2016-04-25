@@ -1,0 +1,42 @@
+@import '../mixins/footer';
+
+%footer {
+  @include footer;
+}
+
+%footer-logo {
+  @include footer-logo;
+}
+
+%footer-links {
+  @include footer-links;
+}
+
+%footer-links-section {
+  @include footer-links-section;
+}
+
+%footer-social {
+  @extend %footer-links-section;
+}
+
+%footer-social-link {
+  @include footer-social-link;
+}
+
+%footer-social-link-facebook {
+  @include footer-social-link-facebook;
+}
+
+%footer-social-link-twitter {
+  @include footer-social-link-twitter;
+}
+
+%footer-social-link-youtube {
+  @include footer-social-link-youtube;
+}
+
+%footer-legal {
+  @extend %footer-links-section;
+  @include footer-legal;
+}

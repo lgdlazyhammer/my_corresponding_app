@@ -1,0 +1,94 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $unitless-line-height;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $header-font-family;
+  font-weight: normal;
+  line-height: $header-line-height;
+  margin: 0;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+h1, .h1 {
+  font-size: $base-font-size * 3; // 16 * 3 = 48px
+}
+
+h2, .h2 {
+  font-size: $base-font-size * 2.0625; // 16 * 2.0625 = 33px
+}
+
+h3, .h3 {
+  font-size: $base-font-size * 1.5; // 16 * 1.5 = 24px
+}
+
+h4, .h4 {
+  font-size: $base-font-size * 1.0625; // 16 * 1.0625 = 17px
+}
+
+h5, .h5 {
+  font-size: $common-font-size * 0.875; // 16 * 0.875 = 14px
+}
+
+h6, .h6 {
+  font-size: $base-font-size * 0.75; // 16 * 0.75 = 12px
+}
+
+p {
+  font-size: $common-font-size;
+  margin: 0 0 ($base-line-height * .5);
+}
+
+small {
+  font-size: $base-font-size * 0.75; // 16 * 0.75 = 12px
+}
+
+a {
+  @include transition(color 0.1s linear);
+  color: $base-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active, &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: 1px solid $base-border-color;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-line-height 0;
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 2px solid $base-border-color;
+  color: lighten($base-font-color, 15);
+  margin: $base-line-height 0;
+  padding-left: $base-line-height / 2;
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: '\2014 \00A0';
+  }
+}

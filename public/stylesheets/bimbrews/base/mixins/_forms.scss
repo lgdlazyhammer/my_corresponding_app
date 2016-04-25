@@ -1,0 +1,206 @@
+@mixin bim-fieldset {
+  background: lighten($base-border-color, 10);
+  border: 1px solid $base-border-color;
+  margin: 0 0 $form-item-margin-bottom 0;
+  padding: $base-line-height;
+}
+
+@mixin bim-form-block {
+  display: block;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+}
+
+@mixin bim-label {
+  color: lighten($gray-7, 10);
+  font-weight: bold;
+  margin-bottom: $base-line-height / 4;
+
+  abbr {
+    display: none;
+  }
+}
+
+@mixin bim-form-normalizer {
+  //@include box-sizing(border-box);
+  @include transition(border-color);
+  background-color: $form-item-background;
+  border: $form-border-width $form-border-style $form-border-color;
+  box-shadow: $form-box-shadow;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+  margin-bottom: $form-item-margin-bottom;
+  padding: $form-item-padding;
+  width: 100%;
+
+  &:hover {
+    border-color: $form-border-color-hover;
+  }
+
+  &:focus {
+    border-color: $form-border-color-focus;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+}
+
+@mixin bim-textarea {
+  resize: vertical;
+}
+
+@mixin bim-input-search {
+  @include appearance(none);
+}
+
+@mixin bim-input-box {
+  display: inline;
+  margin-right: $base-line-height / 4;
+}
+
+@mixin bim-input-file {
+  margin-bottom: $form-item-margin-bottom;
+  padding-bottom: ($base-line-height / 3);
+  width: 100%;
+}
+
+@mixin bim-select {
+  $arrow-width: 0.75em;
+  @include appearance(none);
+  @include size(auto 32px);
+  background: $white image-url('bimbrews/svg/sort-desc.svg') no-repeat right $arrow-width center;
+  background-size: $arrow-width;
+  border-radius: 3px;
+  border: 1px solid $gray-3;
+  max-width: 100%;
+  outline: none;
+  margin-bottom: $form-item-margin-bottom;
+  padding-left: $base-margin;
+  padding-right: $arrow-width * 3;
+  &:active, &:hover {
+    border-color: $gray-4;
+  }
+  &:active {
+    background-color: $gray-1;
+  }
+  &[size],
+  &[multiple] {
+    background-image: none;
+    height: auto;
+    padding: $base-margin;
+    &:active {
+      background-color: $white;
+    }
+  }
+}
+
+@mixin bim-select-open {
+  border-color: $gray-4;
+  background-color: $gray-1;
+}
+
+@mixin bim-inputbutton {
+  @include size($form-checkbox-size);
+  background-color: $white;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid $gray-4;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+}
+
+@mixin bim-checkbox-checked {
+  @extend %svg-block-check;
+}
+
+@mixin bim-radio {
+  border-radius: $form-checkbox-size / 2;
+}
+
+@mixin bim-radio-checked {
+  @extend %svg-block-radio;
+}
+
+@mixin bim-inputbutton-input {
+  @extend %hide-visually;
+  &:focus {
+    & + label {
+      &:before {
+        border-color: $form-border-color-focus;
+        box-shadow: $form-box-shadow-focus;
+      }
+    }
+  }
+}
+
+@mixin bim-inputbutton-container {
+  margin-bottom: $form-item-margin-bottom;
+  label {
+    font-weight: normal;
+    &:before, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &:before {
+      @include bim-inputbutton;
+      content: '';
+      margin-right: .25em;
+    }
+    span {
+      line-height: $form-checkbox-size;
+    }
+  }
+}
+
+@mixin bim-checkbox-container {
+  input {
+    &:checked {
+      & + label {
+        &:before {
+          @include bim-checkbox-checked;
+        }
+      }
+    }
+  }
+}
+
+@mixin bim-radio-container {
+  input {
+    &:checked {
+      & + label {
+        &:before {
+          @include bim-radio-checked;
+        }
+      }
+    }
+  }
+  label {
+    &:before {
+      @include bim-radio;
+    }
+  }
+}
+
+// Error styles
+@mixin bim-input-with-errors {
+  border: 1px solid $error-color;
+  margin-bottom: 0;
+  &:hover, &:focus {
+    border-color: $error-color;
+  }
+}
+
+@mixin bim-field-with-errors {
+  textarea,
+  #{$all-text-inputs},
+  select {
+    @include bim-input-with-errors
+  }
+}
+
+@mixin bim-error-span {
+  color: darken($error-color, 60);
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: .75em;
+}

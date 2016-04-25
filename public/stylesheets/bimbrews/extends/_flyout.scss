@@ -1,0 +1,45 @@
+@import '../mixins/flyout';
+
+%flyout {
+  @include flyout;
+}
+
+%flyout-no-max {
+  @include flyout-no-max;
+}
+
+%flyout-trigger {
+  @include flyout-trigger;
+}
+
+%flyout-container {
+  @include flyout-container;
+}
+
+%flyout-centerer {
+  @include flyout-centerer;
+}
+
+%flyout-container-shown {
+  @include flyout-container-shown;
+}
+
+%flyout-item {
+  @include flyout-item;
+}
+
+%flyout-first-item {
+  @include flyout-first-item;
+}
+
+%flyout-last-item {
+  @include flyout-last-item;
+}
+
+%flyout-very-first-item {
+  @include flyout-very-first-item;
+}
+
+%flyout-very-last-item {
+  @include flyout-very-last-item;
+}

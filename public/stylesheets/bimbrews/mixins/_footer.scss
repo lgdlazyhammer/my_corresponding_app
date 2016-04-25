@@ -1,0 +1,62 @@
+@mixin footer {
+  &, a {
+    color: $gray-6;
+  }
+  @extend %clearfix;
+  font-size: $footer-font-size;
+  line-height: 1em;
+  padding: 0 $footer-padding * 2;
+}
+
+@mixin footer-logo {
+  float: right;
+
+  img {
+    display: block;
+    margin: ($footer-height - image-height('bimbrews/footer/autodesk-logo-rgb-color-logo-black-text-small.png')) / 2 0;
+  }
+}
+
+@mixin footer-links {
+  float: left;
+}
+
+@mixin footer-links-section {
+  float: left;
+  padding-right: $footer-padding;
+
+  li {
+    float: left;
+    padding-right: $footer-padding;
+  }
+}
+
+@mixin footer-social-link {
+  @extend %hide-text;
+  @include size(image-width('bimbrews/footer/facebook.png') image-height('bimbrews/footer/facebook.png'));
+  display: block;
+  margin: ($footer-height - image-height('bimbrews/footer/facebook.png')) / 2 0;
+}
+
+@mixin footer-social-link-facebook {
+  background-image: image-url('bimbrews/footer/facebook.png');
+}
+
+@mixin footer-social-link-twitter {
+  background-image: image-url('bimbrews/footer/twitter.png');
+}
+
+@mixin footer-social-link-youtube {
+  background-image: image-url('bimbrews/footer/youtube.png');
+}
+
+@mixin footer-legal {
+  li {
+    border-right: 1px solid $gray-6;
+    margin: ($footer-height - $footer-font-size) / 2 0;
+    padding-left: $footer-padding;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

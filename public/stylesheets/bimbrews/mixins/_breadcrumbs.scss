@@ -1,0 +1,24 @@
+@mixin bread {
+  @include clearfix;
+}
+
+@mixin bread-crumb {
+  float: left;
+  font-size: $breadcrumb-font-size;
+  line-height: $breadcrumb-height;
+}
+
+@mixin first-crumb-icon {
+  display: none;
+}
+
+@mixin crumb {
+  margin: 0 $base-margin * 0.3 0 $base-margin * 0.7;
+}
+
+@mixin crumb-icon {
+  @extend %icon;
+  @extend %icon-breadcrumb-indicator;
+  content: '';
+  @include size(em(12));
+}

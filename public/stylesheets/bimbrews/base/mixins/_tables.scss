@@ -1,0 +1,82 @@
+// A table can include this to have all default table
+// styling applied to it.
+@mixin bim-table-with-descendants {
+  @extend %bim-table-with-descendants;
+}
+
+@mixin bim-table {
+  background: $white;
+  border: 1px solid $gray-2;
+  border-collapse: collapse;
+  margin: ($base-line-height / 2) 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+@mixin bim-th {
+  border-right: 1px solid $gray-2;
+  font-weight: bold;
+  padding: ($base-line-height / 2) 0;
+  text-align: left;
+}
+
+@mixin bim-tbody {
+  tr {
+    border-bottom: 1px solid $gray-2;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+@mixin bim-thead {
+  tr {
+    border: 1px solid $gray-2;
+  }
+}
+
+@mixin bim-table-cells {
+  font-size: em(14);
+  padding: $base-margin ($base-margin * 2);
+}
+
+@mixin bim-table-rows-and-cells {
+  vertical-align: middle;
+}
+
+@mixin bim-table-header {
+  float: left;
+}
+
+@mixin bim-sort-icons {
+  float: right;
+}
+
+@mixin bim-sort {
+  cursor: pointer;
+
+  i {
+    display: none;
+    font-size: 6px;
+    opacity: 0.1;
+    position: relative;
+    top: -2px;
+  }
+
+  &.desc {
+    .icon-sort-desc {
+      color: $blue;
+      display: inline-block;
+      opacity: 1;
+    }
+  }
+
+  &.asc {
+    .icon-sort-asc {
+      color: $blue;
+      display: inline-block;
+      opacity: 1;
+    }
+  }
+}

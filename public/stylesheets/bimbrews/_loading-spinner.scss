@@ -1,0 +1,22 @@
+@import 'extends/loading-spinner';
+
+.loading-spinner {
+  @extend %loading-spinner;
+
+  &__text {
+    @extend %loading-spinner-text;
+  }
+
+  &--large {
+    @extend %loading-spinner-large;
+  }
+
+  &--medium {
+    @extend %loading-spinner-medium;
+  }
+
+  &--small {
+    @extend %loading-spinner-small;
+  }
+}
+

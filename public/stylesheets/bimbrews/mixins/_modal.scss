@@ -1,0 +1,101 @@
+@mixin modal-hide {
+  display: none;
+}
+
+@mixin modal-overlay {
+  @include transition(opacity .25s ease);
+  @include position(fixed, 0px 0px 0px 0px);
+
+  background-color: transparentize($gray-7, 0.5);
+  cursor: pointer;
+  text-align: left;
+  z-index: 9999;
+}
+
+@mixin modal-dialog {
+  @include transform(translate(-50%, -50%));
+  background: $modal-background-color;
+  border-radius: $base-border-radius;
+  left: 50%;
+  overflow: auto;
+  position: fixed;
+  text-align: left;
+  top: 40%;
+  z-index:10000;
+  width: 90%;
+
+  @include media($medium-screen) {
+    max-height: 60%;
+    width: 60%;
+  }
+
+  @include media($large-screen) {
+    width: 33%;
+  }
+
+  form > div {
+    margin-bottom: 0.75em;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+@mixin modal-dialog-shown {
+  @include animation(fadeIn 0.25s);
+}
+
+@mixin modal-actions {
+  @include clearfix;
+  padding-top: .75em;
+
+  .button,
+  .button--secondary,
+  [type="submit"],
+  button {
+    float: right;
+    margin: 0 0 0 0.5em;
+  }
+}
+
+@mixin modal-head {
+  border-bottom: 1px solid $modal-area-border-color;
+  min-height: $modal-close-dimensions + ($modal-padding * 2);
+  padding: $modal-padding;
+}
+
+@mixin modal-header {
+  color: $gray-7;
+  font-size: em(18);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 90%;
+}
+
+@mixin modal-main {
+  padding: $modal-padding;
+}
+
+@mixin modal-footer {
+  @extend %clearfix;
+  border-top: 1px solid $modal-area-border-color;
+  padding: $modal-padding;
+}
+
+@mixin modal-actions {
+  float: right;
+
+  button, input[type="submit"], .button {
+    float: left;
+    margin: 0 0 0 10px;
+  }
+}
+
+@mixin modal-close {
+  @include position(absolute, $modal-padding $modal-padding null null);
+  @include size($modal-close-dimensions);
+  cursor: pointer;
+  font-size: em(16);
+}

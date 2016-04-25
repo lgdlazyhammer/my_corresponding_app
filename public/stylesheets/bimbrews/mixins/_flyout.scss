@@ -1,0 +1,99 @@
+@mixin flyout {
+  background: transparentize($gray-7, 0.1);
+  border-radius: $base-border-radius;
+  font-size: 12px; // px in case it appears inside something with a smaller font size
+  right: -50%;
+  max-width: 200px;
+  min-width: 100px;
+  position: relative;
+  white-space: nowrap;
+}
+
+@mixin flyout-no-max {
+  max-width: none;
+}
+
+@mixin flyout-trigger {
+  position: relative;
+}
+
+@mixin flyout-container {
+  opacity: 0;
+  padding-top: 1em;
+  pointer-events: none;
+  position: absolute;
+  transition: 0.3s opacity linear;
+  width: 100%;
+
+  @at-root .no-csspointerevents & {
+    display: none;
+  }
+
+  &:after {
+    border-bottom: 0.5em solid transparentize($gray-7, 0.1);
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    content: '';
+    left: 50%;
+    margin-left: -0.5em;
+    margin-top: 0.5em;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@mixin flyout-container-shown {
+  opacity: 1;
+  pointer-events: auto;
+
+  @at-root .no-csspointerevents & {
+    display: block;
+  }
+}
+
+@mixin flyout-centerer {
+  float: right;
+  position: relative;
+  right: 50%;
+}
+
+@mixin flyout-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &,
+  a {
+    color: $white;
+    padding: em(6, 12) em(8, 12);
+  }
+
+  a {
+    cursor: pointer;
+    display: block;
+    margin: (-(em(6, 12))) (-(em(8, 12)));
+
+    &:hover {
+      background: $gray-6;
+    }
+  }
+}
+
+@mixin flyout-first-item {
+  border-top: 1px solid transparentize($white, 0.6);
+}
+
+@mixin flyout-last-item {
+  border-bottom: 1px solid transparentize($black, 0.4);
+}
+
+@mixin flyout-very-first-item {
+  border-top: 0;
+  border-top-left-radius: $base-border-radius;
+  border-top-right-radius: $base-border-radius;
+}
+
+@mixin flyout-very-last-item {
+  border-bottom: 0;
+  border-bottom-left-radius: $base-border-radius;
+  border-bottom-right-radius: $base-border-radius;
+}

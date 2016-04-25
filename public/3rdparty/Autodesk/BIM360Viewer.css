@@ -1,0 +1,179 @@
+/* style for bim tree */
+@font-face {
+    font-family: 'bimviewericon';
+    src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="bimviewericon-"], [class*=" bimviewericon-"] {
+    font-family: 'bimviewericon';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    padding-top: 2px;
+    speak: none;
+    text-transform: none;
+
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bimviewericon-dropdown_arrow:before {
+    content: "\e90f";
+    color: #4875A5;
+}
+
+.bimviewericon-viewpoint:before {
+    content: "\e90e";
+    color:  #666;
+    font-size: 18px;
+}
+
+.folder.expanded > header .bimviewericon-dropdown_arrow:before,
+.geometry_2d.expanded > header .bimviewericon-dropdown_arrow:before,
+.geometry_3d.expanded > header .bimviewericon-dropdown_arrow:before
+{
+    content: "\e905";
+}
+
+.bim_tree .treeview group.selected > header .bimviewericon-dropdown_arrow:before,
+.bim_tree .treeview leaf.selected > header .bimviewericon-viewpoint:before {
+    color: #fff !important;
+}
+
+.bim_tree .treeview group:hover > header .bimviewericon-dropdown_arrow:before,
+.bim_tree .treeview leaf:hover > header .bimviewericon-viewpoint:before {
+    color: #5383b4;
+}
+
+.bim_tree .treeview group {
+    font-size: 12px;
+}
+
+.bim_tree .treeview header > label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bim_tree .treeview leaf > header > label {
+    padding-left: 13px;
+}
+
+.bim_tree .treeview leaf header > icon {
+    padding-right: 0 !important;
+}
+
+.bim_tree .treeview group:hover {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.bim_tree .treeview header {
+    line-height: 24px;
+    margin-bottom: 0;
+    padding: 4.5px 13px;
+}
+
+.bim_tree .treeview group.selected {
+    border-left: none;
+}
+
+.bim_tree .treeview:hover header {
+    background-color:#fff;
+    transition: none;
+}
+
+.bim_tree .treeview header:hover {
+    transition: none;
+    background-color: #E0EAF3;
+    text-decoration: none;
+}
+
+.bim_tree .treeview group.collapsed > header > icon {
+    position:relative;
+    top: 0;
+    background-image: none;
+}
+
+.bim_tree .treeview group.expanded > header > icon {
+    position:relative;
+    background-image: none;
+}
+
+.bim_tree .treeview leaf {
+    margin-left: 14px;
+    left: 29px;
+    position: relative;
+    display: block;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none;
+}
+
+.bim_tree .treeview leaf:hover {
+    transition: none;
+}
+
+.bim_tree .treeview header icon {
+    padding: 0 0 0 13px; /*override the property defined in tree view*/
+    background-image: none !important;
+}
+
+.bim_tree .treeview group.selected > header {
+    background-color: #4675A8;
+    border-left: none;
+}
+
+.bim_tree .treeview group.selected > header > label {
+    color: #fff;
+}
+
+.bim_tree .treeview leaf.selected > header {
+    background-color: #4675A8;
+}
+
+.bim_tree .treeview leaf.selected > header > label {
+    color: #fff;
+}
+
+.bim_tree .treeview leaf.selected > header > icon {
+    background-image: none;
+}
+
+/* Bootstrap Fix */
+.bim_tree .treeview label {
+    margin-bottom: 0px;
+    font-weight: normal;
+    display: inline;
+    color: #333333;
+    font-size: 13px !important;
+}
+
+.bim_tree .treeview .folder > header > label {
+    color: #999999;
+}
+
+.bim_tree .treeview group label:hover {
+    text-decoration: none;
+}
+
+
+.bim_tree .treeview group.selected > leaf {
+    background: #ffffff;
+}
+
+.bim_tree .treeview .expanded.view{
+    left: 6px;
+}
+
+.viewer_sheet_name_label {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+}

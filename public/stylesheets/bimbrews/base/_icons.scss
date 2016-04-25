@@ -1,0 +1,18 @@
+.icon {
+  @extend %icon;
+}
+
+@each $icon-type in $icon-types {
+  $prefix: '';
+  @if $icon-type != '' {
+    $prefix: '#{$icon-type}-';
+  }
+  @each $icon in list-svgs($icon-type) {
+    .#{$prefix}icon-#{$icon} {
+      @extend %#{$prefix}icon-#{$icon};
+    }
+    .#{$prefix}icon-#{$icon}-sized {
+      @extend %#{$prefix}icon-#{$icon}-sized;
+    }
+  }
+}

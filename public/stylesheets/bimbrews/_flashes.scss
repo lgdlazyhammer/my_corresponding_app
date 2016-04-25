@@ -1,0 +1,15 @@
+%flash-alert, #flash_alert {
+  @include flash($alert-color);
+}
+
+%flash-failure, #flash_failure {
+  @include flash($error-color);
+}
+
+%flash-notice, #flash_notice {
+  @include flash($notice-color);
+}
+
+%flash-success, #flash_success {
+  @include flash($success-color);
+}

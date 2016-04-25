@@ -1,0 +1,194 @@
+@mixin header {
+  @include clearfix;
+  background-color: $header-background-color;
+  height: $header-height;
+  padding: $header-padding $header-padding $header-padding 0;
+}
+
+@mixin header-logo {
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin-top: -$header-padding;
+
+  img {
+    @include size($header-height);
+  }
+}
+
+@mixin header-logotype {
+  display: inline-flex;
+  float: left;
+  height: $header-logo-height;
+  margin-top: ($header-inner-height - $header-logo-height) / 2;
+  transition: margin 2s ease-in-out 1s;
+  width: 280px;
+}
+
+@mixin header-product-name {
+  color: $black;
+  display: inline-block;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: em(26);
+  letter-spacing: 1px;
+  line-height: em(20, 26);
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+@mixin header-logotype-hidden {
+  margin-left: -100%;
+}
+
+@mixin header-breadcrumbs {
+  float: left;
+  margin: 0.5em 0 0 $header-padding;
+}
+
+@mixin header-controls {
+  float: right;
+}
+
+@mixin header-control-item {
+  float: left;
+  margin-left: em(10);
+}
+
+@mixin header-control {
+  @extend %bim-button;
+  @extend %hide-text;
+  @include size($header-inner-height);
+  border: 0;
+  box-shadow: $header-box-shadow;
+  font-size: 1em;
+  margin: 0;
+  outline: none;
+  padding: 0;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $white;
+  }
+}
+
+@mixin header-control-profile {
+  background-size: cover;
+}
+
+@mixin header-control-profile-no-photo {
+  &:before {
+    @extend %header-icon-profile;
+    @include size($header-inner-height - 10px);
+    background-color: $gray-3;
+    background-position: 100%;
+    background-size: contain;
+    content: '';
+    vertical-align: middle;
+  }
+
+  padding: em(5);
+}
+
+@mixin header-control-text {
+  font-size: em(12);
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@mixin header-control-icon {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-size: auto;
+  }
+}
+
+@mixin header-control-unread {
+  &:before {
+    display: none;
+  }
+
+  background-position: (($header-inner-height - $header-icon-height) / 2) (($header-inner-height - $header-icon-height) / 2);
+  padding-left: $header-inner-height;
+  width: auto;
+
+  &,
+  &:hover {
+    background-size: auto;
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $orange-dark;
+  }
+}
+
+@mixin header-control-unread-count {
+  padding: 0 0.5em 0 0.25em;
+}
+
+@mixin header-control-messages {
+  @extend %header-icon-messages;
+
+  &:hover {
+    @extend %header-icon-messages-hover;
+  }
+}
+
+@mixin header-control-notifications {
+  @extend %header-icon-notifications;
+
+  &:hover {
+    @extend %header-icon-notifications-hover;
+  }
+}
+
+@mixin header-control-messages-unread {
+  &,
+  &:hover {
+    @extend %header-icon-messages-unread;
+  }
+}
+
+@mixin header-control-notifications-unread {
+  &,
+  &:hover {
+    @extend %header-icon-notifications-unread;
+  }
+}
+
+@mixin header-control-admin {
+  @extend %header-icon-admin;
+
+  &:hover {
+    @extend %header-icon-admin-hover;
+  }
+}
+
+@mixin header-control-help {
+  @extend %header-icon-help;
+
+  &:hover {
+    @extend %header-icon-help-hover;
+  }
+}
+
+@mixin header-search {
+  @extend %icon-search;
+  background-position: right (($header-inner-height - $header-icon-height) / 2) center;
+  background-size: auto;
+  border: 0;
+  border-radius: $base-border-radius;
+  box-shadow: $header-box-shadow;
+  margin: 0;
+  padding-right: $header-inner-height;
+
+  &:focus {
+    background-image: none;
+  }
+}

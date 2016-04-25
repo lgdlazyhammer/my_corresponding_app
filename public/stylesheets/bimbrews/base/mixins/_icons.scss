@@ -1,0 +1,23 @@
+//@import "rails-sass-images";
+
+@mixin icon-base($size: '') {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  @if ($size != '') {
+    @include size($size);
+  }
+}
+
+@mixin svg-block($filename, $icon-type: '') {
+  @if $icon-type != '' {
+    $icon-type: '#{$icon-type}/';
+  }
+  background-image: inline('bimbrews/svg/' + $icon-type + $filename + '.svg');
+}
+
+@mixin icon($filename, $size: '', $icon-type: '') {
+  @include icon-base($size);
+  @include svg-block($filename, $icon-type);
+}

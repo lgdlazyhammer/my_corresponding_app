@@ -1,0 +1,21 @@
+@import 'extends/breadcrumbs';
+
+.bread {
+  @extend %bread;
+}
+
+.bread__crumb {
+  @extend %bread-crumb;
+
+  &:first-child .crumb__icon {
+    @extend %first-crumb-icon;
+  }
+}
+
+.crumb__icon {
+  @extend %crumb;
+
+  &:after {
+    @extend %crumb-icon;
+  }
+}

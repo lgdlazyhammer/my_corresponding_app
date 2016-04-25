@@ -1,0 +1,12 @@
+// taken from Scut: http://davidtheclark.github.io/scut/hide-visually.html
+
+@mixin hide-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

@@ -1,0 +1,53 @@
+@import 'bourbon';
+@import 'neat';
+@import 'bimbrews/base/base';
+
+.body{
+    @include fill-parent();
+    @include row(table);
+}
+
+.left {
+    @include media(min-width 320px max-width 480px, 12) {
+        @include span-columns(8);
+        @include background(linear-gradient(blue, grey) left repeat);
+    }
+
+    @include media(min-width 480px max-width 1230px, 12) {
+        @include span-columns(8);
+        @include background(linear-gradient(blue, grey) left repeat);
+    }
+
+    @include media(min-width 1230px max-width 2230px, 12) {
+        @include span-columns(4);
+        @include background(linear-gradient(blue, grey) left repeat);
+    }
+
+    @include media(2230px) {
+        @include span-columns(12);
+        @include background(linear-gradient(blue, grey) left repeat);
+    }
+ }
+
+
+.right {
+   @include media(min-width 320px max-width 480px, 12) {
+        @include span-columns(4);
+        @include background(linear-gradient(red, green) left repeat, radial-gradient(red, orange));
+    }
+
+    @include media(min-width 480px max-width 1230px, 12) {
+        @include span-columns(4);
+        @include background(linear-gradient(red, green) left repeat, radial-gradient(red, orange));
+    }
+
+    @include media(min-width 1230px max-width 2230px, 12) {
+        @include span-columns(8);
+        @include background(linear-gradient(red, green) left repeat, radial-gradient(red, orange));
+    }
+
+    @include media(2230px) {
+        @include span-columns(8);
+        @include background(linear-gradient(red, green) left repeat, radial-gradient(red, orange));
+    }
+ }

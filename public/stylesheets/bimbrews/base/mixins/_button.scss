@@ -1,0 +1,42 @@
+@mixin bim-button($background-color, $border-color, $color, $hover-background-color, $hover-border-color, $hover-color, $active-background-color, $active-border-color, $active-color, $disabled-background-color, $disabled-border-color, $disabled-color) {
+  @include appearance(none);
+  -webkit-font-smoothing: antialiased;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $base-border-radius;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $button-font-size;
+  font-weight: bold;
+  line-height: em(16, 14);
+  margin-bottom: .75em;
+  outline: none;
+  padding: em(11) 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover, &:focus {
+    background-color: $hover-background-color;
+    border-color: $hover-border-color;
+    color: $hover-color;
+  }
+
+  &:active {
+    background-color: $active-background-color;
+    border-color: $active-border-color;
+    color: $active-color;
+  }
+
+  &.disabled, &:disabled, &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+    &:hover, &:active {
+      background-color: $background-color;
+      border-color: $border-color;
+      color: $color;
+    }
+  }
+}

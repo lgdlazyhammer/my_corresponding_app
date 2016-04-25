@@ -1,0 +1,18 @@
+@mixin flash($color) {
+  @if lightness(lighten($color, 50)) > 95% {
+    background: lighten($color, 35);
+  } @else {
+    background: lighten($color, 50);
+    z-index: 239048;
+  }
+  color: $color;
+  padding: 0.75em $header-padding;
+
+  a {
+    color: darken($color, 10);
+
+    &:hover {
+      color: darken($color, 30);
+    }
+  }
+}

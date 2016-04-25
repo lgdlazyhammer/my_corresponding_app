@@ -1,0 +1,92 @@
+@import '../mixins/navigation';
+
+%header {
+  @include header;
+}
+
+%header-logo {
+  @include header-logo;
+}
+
+%header-logotype {
+  @include header-logotype;
+}
+
+%header-product-name {
+  @include header-product-name;
+}
+
+%header-logotype-hidden {
+  @include header-logotype-hidden;
+}
+
+%header-breadcrumbs {
+  @include header-breadcrumbs;
+}
+
+%header-controls {
+  @include header-controls;
+}
+
+%header-control-item {
+  @include header-control-item;
+}
+
+%header-control {
+  @include header-control;
+}
+
+%header-control-text {
+  @include header-control-text;
+}
+
+%header-control-profile {
+  @include header-control-profile;
+}
+
+%header-control-profile-no-photo {
+  @include header-control-profile-no-photo;
+}
+
+%header-control-icon {
+  @include header-control-icon;
+}
+
+%header-control-unread-count {
+  @extend %header-control-text;
+  @include header-control-unread-count;
+}
+
+%header-control-messages {
+  @include header-control-messages;
+}
+
+%header-control-notifications {
+  @include header-control-notifications;
+}
+
+%header-control-unread {
+  @include header-control-unread;
+}
+
+%header-control-messages-unread {
+  @extend %header-control-unread;
+  @include header-control-messages-unread;
+}
+
+%header-control-notifications-unread {
+  @extend %header-control-unread;
+  @include header-control-notifications-unread;
+}
+
+%header-control-admin {
+  @include header-control-admin;
+}
+
+%header-control-help {
+  @include header-control-help;
+}
+
+%header-search {
+  @include header-search;
+}
